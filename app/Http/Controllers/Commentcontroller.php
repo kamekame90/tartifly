@@ -14,7 +14,7 @@ class Commentcontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -24,7 +24,7 @@ class Commentcontroller extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +33,17 @@ class Commentcontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $item)
     {
-        //
+      $sejour = new Sejour;
+      $sejour->libelle = $item->libelle;
+      $sejour->description = $item->description;
+      $sejour->pays = $item->pays;
+      $sejour->disponibilite = $item->disponibilite;
+      $sejour->dure = $item->dure;
+      $sejour->cout = $item->cout;
+      $sejour->photo = "/images/sejour.jpg";
+      $sejour->save();
     }
 
     /**
@@ -44,9 +52,10 @@ class Commentcontroller extends Controller
      * @param  \App\Sejour  $sejour
      * @return \Illuminate\Http\Response
      */
-    public function show(Sejour $sejour)
+    public function show(Sejour $idSejour)
     {
-        //
+      $sejour = Sejour::find($idSejour);
+      return view('admin.sejour', ['sejour' => $sejour]);
     }
 
     /**

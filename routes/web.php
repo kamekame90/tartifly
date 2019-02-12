@@ -31,7 +31,14 @@ Route::get('/voyages', 'SejourController@show' );
 
 Route::get('/voyages/{id?}', 'SejourController@getSejour' );
 
-Route::resource('comments', 'CommentController' );
+//Route::resource('/admin/comments', 'CommentController@create' );
+
+Route::group(['prefix' => 'admin'], function(){
+  Route::get('/sejour', 'CommentController@index');
+  Route::get('/sejour/{id?}', 'CommentController@show');
+  Route::get('/sejour/store', 'CommentController@store');
+  Route::get('/sejour/update', 'CommentController@update');
+});
 
 /*Route::get('user/{id}', function ($id) {
     return 'user '.$id ;
@@ -50,7 +57,7 @@ Route::get('user/{id}', function ($id) {
     return controller@;
 }); // acceder a la variable {id}
 
-Route::['prefix => 'admin'], function(){
+Route::group['prefix => 'admin'], function(){
   Route::get('users', function ($id) {
 
   });
