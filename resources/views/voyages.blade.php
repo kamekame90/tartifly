@@ -29,109 +29,21 @@
       <div class="col-md-9">
         <div class="row">
           <div class="wrap-division">
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-1.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
+            <?php foreach ($sejours as $key => $value): ?>
+              <div class="col-md-6 col-sm-6 animate-box">
+                <div class="tour">
+                  <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-1.jpg);">
+                    <p class="price"><span> {{ $value["cout"] }} Euros </span> <small>/ {{ $value["dure"] }} Days</small></p>
+                  </a>
+                  <span class="desc">
+                    <h2><a href="tour-place.html">{{ $value["libelle"] }}</a></h2>
+                    <span class="city">{{ $value["pays"] }}</span>
+                  </span>
+                </div>
               </div>
-            </div>
+            <?php endforeach; ?>
 
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-2.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
 
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-3.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-4.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-5.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-6.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-7.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 animate-box">
-              <div class="tour">
-                <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-8.jpg);">
-                  <p class="price"><span>$1500</span> <small>/ 3 Days</small></p>
-                </a>
-                <span class="desc">
-                  <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
-                  <h2><a href="tour-place.html">Family Tour in Greece</a></h2>
-                  <span class="city">Athens, Greece</span>
-                </span>
-              </div>
-            </div>
           </div>
         </div>
         <div class="row">

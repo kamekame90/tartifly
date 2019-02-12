@@ -27,11 +27,15 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/voyages/{id}', 'VoyageController@show' );
+Route::get('/voyages', 'SejourController@show' );
 
-/*Route::get('/user/{id?}', function ($id) {
-    return 'page voyage id: '.$id ;
-});
+Route::get('/voyages/{id?}', 'SejourController@getSejour' );
+
+Route::resource('comments', 'CommentController' );
+
+/*Route::get('user/{id}', function ($id) {
+    return 'user '.$id ;
+})-> name('utilisateur');
 
 Route::get('/user/{id}/comments/{comment}', function ($id,$comment) {
     return 'page voyage id: '.$id.' / '.$comment ;
@@ -40,9 +44,19 @@ Route::get('/user/{id}/comments/{comment}', function ($id,$comment) {
 
 Route::get('/{id}', function ($id) {
     return view('gretting', ['id' => '$id']);
-}); // acceder a la variable {id}
+}); // acceder a la variable {{ $id }}
 
 Route::get('user/{id}', function ($id) {
     return controller@;
 }); // acceder a la variable {id}
+
+Route::['prefix => 'admin'], function(){
+  Route::get('users', function ($id) {
+
+  });
+  Route::get('home', function ($id) {
+      return controller@;
+  });
+});
+
 */
