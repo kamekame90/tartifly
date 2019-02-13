@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.tartifly');
+    return view('home');
 });
 
 Route::get('/about', function () {
@@ -35,8 +35,6 @@ Route::get('/voyages/{id?}', 'SejourController@getSejour' );
 
 Route::group(['prefix' => 'admin'], function(){
   Route::resource('/sejour', 'CommentController' );
-
-
   /*Route::get('/sejour', 'CommentController@index');
   Route::get('/sejour/create', 'CommentController@create');
   Route::post('/sejour', 'CommentController@store');
@@ -45,6 +43,17 @@ Route::group(['prefix' => 'admin'], function(){
   Route::get('/sejour/{id?}/update', 'CommentController@update');
   Route::get('/sejour/{id?}/delete', 'CommentController@delete');*/
 });
+
+Route::get('/search', 'SejourController@search' );
+Route::post('/search', 'SejourController@search' );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/login', 'HomeController@login');
+//Route::post('/logout', 'HomeController@logout');
+
+Route::get('/reservation/{sejour}', 'CommentController@index')->middleware('auth');
 
 /*Route::get('user/{id}', function ($id) {
     return 'user '.$id ;
@@ -73,3 +82,6 @@ Route::group['prefix => 'admin'], function(){
 });
 
 */
+
+
+//Route::get('/about', 'SejourController@about')->middleware('guest');

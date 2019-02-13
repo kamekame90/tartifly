@@ -110,6 +110,8 @@
                   </li>
                   <li><a href="about">About</a></li>
                   <li class="active"><a href="contact">Contact</a></li>
+                  @guest <li><a href="/login">Login</a></li> @endguest
+                  @auth <li><a href="{{ route('sejour.index')}}">Mon compte</a></li><li><a href="/logout">Logout</a></li> @endauth
                 </ul>
               </div>
             </div>

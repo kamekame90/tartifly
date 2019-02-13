@@ -31,7 +31,7 @@
           <div class="col-md-12">
             <div class="wrap-division">
               <div class="col-md-12 col-md-offset-0 heading2 animate-box">
-                <h2>{{ $sejour["libelle"] }} Tour</h2>
+                <h2>{{ $sejour["cout"] }} Tour</h2>
               </div>
               <div class="row">
                 <div class="col-md-12 animate-box">
@@ -417,6 +417,8 @@
               </li>
               <li><a href="about">About</a></li>
               <li><a href="contact">Contact</a></li>
+              @guest <li><a href="/login">Login</a></li> @endguest
+              @auth <li><a href="{{ route('sejour.index')}}">Mon compte</a></li><li><a href="/logout">Logout</a></li> @endauth
             </ul>
           </div>
         </div>

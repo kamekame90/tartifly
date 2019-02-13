@@ -84,18 +84,19 @@
           </div>
           <div class="col-xs-10 text-right menu-1">
             <ul>
-              <li><a href="/">Home</a></li>
+              <li><a href="{{ route('sejour.index')}}">Home</a></li>
               <li class="active has-dropdown">
-                <a href="voyages">Voyages</a>
-                <ul class="dropdown">
-                  <li><a href="#">Destination</a></li>
-                  <li><a href="#">Cruises</a></li>
-                  <li><a href="#">Hotels</a></li>
-                  <li><a href="#">Booking</a></li>
-                </ul>
+                <a href="{{ route('sejour.index')}}">Sejours</a>
               </li>
-              <li><a href="about">About</a></li>
-              <li><a href="contact">Contact</a></li>
+              <li><a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+              </li>
             </ul>
           </div>
         </div>
