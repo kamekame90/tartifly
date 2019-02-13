@@ -31,9 +31,9 @@ class SejourController extends Controller
   public function search(Request $request)
   {
 
-    $sejour = Sejour::where('libelle', 'LIKE', '%'.$request->libelle.'%')->get();
-    //dump($sejour->libelle);
+      $sejour = Sejour::where('libelle', 'LIKE', '%'.$request->libelle.'%')->get();
+    //dump($sejour[0]->libelle);
     //die;
-      return view('sejour', ['sejour' => $sejour]);
+      return view('sejour', ['sejour' => $sejour[0]]);
   }
 }

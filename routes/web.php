@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin'], function(){
   Route::get('/sejour/{id?}/delete', 'CommentController@delete');*/
 });
 
-Route::get('/search', 'SejourController@search' );
+//Route::get('/search', 'SejourController@search' );
 Route::post('/search', 'SejourController@search' );
 
 Auth::routes();
