@@ -1,5 +1,6 @@
 @extends('layouts.tartifly')
 
+
 @section('slider')
 <aside id="colorlib-hero">
   <div class="flexslider">
@@ -23,6 +24,7 @@
 @endsection
 
 @section('content')
+
 <!-- page content -->
 <div class="right_col" role="main">
   <div class="">
@@ -69,17 +71,17 @@
           </div>
           <div class="x_content">
             <br />
-            @if ($errors->has('libelle'))
-              {{ $errors->first('libelle') }}
-            @endif
-
-            <form  action="{{ route('sejour.store') }}" method="POST" id="form1" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{ route('sejour.update',['sejour' => $sejour->id]) }}" method="POST" id="form1" data-parsley-validate class="form-horizontal form-label-left">
               @csrf
+              @method("PUT")
+              @if ($errors->has('libelle'))
+                {{ $errors->first('libelle') }}
+              @endif
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="travel-label">Libelle<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="libelle" type="text" id="travel-label" required="required" class="form-control col-md-7 col-xs-12">
+                  <input name="libelle" type="text" id="travel-label" required="required" value="{{ $sejour->libelle }}" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               @if ($errors->has('description'))
@@ -89,7 +91,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="travel-label">Description<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="description" type="text" id="travel-label" required="required" class="form-control col-md-7 col-xs-12">
+                  <input name="description" type="text" id="travel-label" required="required" value="{{ $sejour->description }}" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -97,9 +99,9 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Pays</label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <select name="pays" class="select2_group form-control">
-                      <option value="FR">France</option>
-                      <option value="US">US</option>
-                      <option value="UK">UK</option>
+                      <option value="FR" @if ($sejour->pays == "FR") selected @endif>France</option>
+                      <option value="US" @if ($sejour->pays == "US") selected @endif>US</option>
+                      <option value="UK" @if ($sejour->pays == "UK") selected @endif>UK</option>
                   </select>
                 </div>
               </div>
@@ -108,10 +110,10 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Disponibilite</label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div id="dispo" class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <label @if ($sejour->disponibilite == '1') class="btn btn-primary active" @else class="btn btn-default" @endif data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                       <input type="radio" name="disponibilite" value="1"> Oui
                     </label>
-                    <label class="btn btn-primary active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <label @if ($sejour->disponibilite == '1') class="btn btn-default"" @else class="btn btn-primary active" @endif data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                       <input type="radio" name="disponibilite" value="0"> Non
                     </label>
                   </div>
@@ -124,7 +126,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date-begin">Dure<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" name="dure" id="date-begin" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="dure" value="{{ $sejour->dure }}" id="date-begin" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               @if ($errors->has('cout'))
@@ -134,15 +136,15 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date-begin">Cout<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" name="cout" id="date-begin" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="cout" id="date-begin" value="{{ $sejour->cout }}" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
+
 
               <div class="ln_solid"></div>
               <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                   <button class="btn btn-primary" type="button">Cancel</button>
-                  <button class="btn btn-primary" type="reset">Reset</button>
                   <button type="submit" class="btn btn-success">Submit</button>
                 </div>
               </div>

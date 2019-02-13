@@ -31,13 +31,19 @@ Route::get('/voyages', 'SejourController@show' );
 
 Route::get('/voyages/{id?}', 'SejourController@getSejour' );
 
-//Route::resource('/admin/comments', 'CommentController@create' );
+//Route::resource('/admin/comments', 'CommentController' );
 
 Route::group(['prefix' => 'admin'], function(){
-  Route::get('/sejour', 'CommentController@index');
+  Route::resource('/sejour', 'CommentController' );
+
+
+  /*Route::get('/sejour', 'CommentController@index');
+  Route::get('/sejour/create', 'CommentController@create');
+  Route::post('/sejour', 'CommentController@store');
   Route::get('/sejour/{id?}', 'CommentController@show');
-  Route::get('/sejour/store', 'CommentController@store');
-  Route::get('/sejour/update', 'CommentController@update');
+  Route::get('/sejour/{id?}/edit', 'CommentController@edit');
+  Route::get('/sejour/{id?}/update', 'CommentController@update');
+  Route::get('/sejour/{id?}/delete', 'CommentController@delete');*/
 });
 
 /*Route::get('user/{id}', function ($id) {
