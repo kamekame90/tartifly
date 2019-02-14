@@ -164,7 +164,7 @@
           </div>
           <div class="col-xs-10 text-right menu-1">
             <ul>
-              <li><a href="{{ route('sejour.index')}}">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li class="active has-dropdown">
                 <a href="{{ route('sejour.index')}}">Sejours</a>
               </li>

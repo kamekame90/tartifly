@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sejour;
+//use App\Destination;
 
 class SejourController extends Controller
 {
@@ -18,6 +19,7 @@ class SejourController extends Controller
   public function show()
   {
       $sejours = Sejour::all();
+      //dump($sejours);
       //$id = Sejour::find($id);
       return view('voyages', ['sejours' => $sejours]);
   }
@@ -25,8 +27,17 @@ class SejourController extends Controller
   public function getSejour($id = null)
   {
       $sejour = Sejour::find($id);
+      //dd($sejour->photos);
+      //$this->getDestinations($sejour->id);
       return view('sejour', ['sejour' => $sejour]);
   }
+
+  /*public function getDestinations($sejour_id)
+  {
+      $destinations = Destination::where('sejour_id', '=', $sejour_id)->get();
+      //dump($destinations);
+      return view('sejour', ['destinations' => $destinations]);
+  }*/
 
   public function search(Request $request)
   {

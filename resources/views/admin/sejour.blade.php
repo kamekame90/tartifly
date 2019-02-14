@@ -40,7 +40,7 @@
               <?php foreach ($sejours as $key => $value): ?>
                 <div class="col-md-6 col-sm-6 animate-box">
                   <div class="tour">
-                    <a href="tour-place.html" class="tour-img" style="background-image: url(/images/tour-1.jpg);">
+                    <a href="/voyages/{{ $value['id'] }}" class="tour-img" style="background-image: url(/images/tour-1.jpg);">
                       <p class="price"><span> {{ $value["cout"] }} Euros </span> <small>/ {{ $value["dure"] }} Days</small></p>
                     </a>
                     <span class="desc">
@@ -84,7 +84,7 @@
           </div>
           <div class="col-xs-10 text-right menu-1">
             <ul>
-              <li><a href="{{ route('sejour.index')}}">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li class="active has-dropdown">
                 <a href="{{ route('sejour.index')}}">Sejours</a>
               </li>

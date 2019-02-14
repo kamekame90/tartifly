@@ -37,20 +37,21 @@
                 <div class="col-md-12 animate-box">
                   <div class="room-wrap">
                     <div class="row">
+                      <?php foreach ($sejour->photos as $key => $value): ?>
                       <div class="col-md-6 col-sm-6">
-                        <div class="room-img" style="background-image: url(/images/tour-1.jpg);"></div>
+                        <div class="room-img" style="background-image: url({{ $value['url'] }});"></div>
                       </div>
+                      <?php endforeach; ?>
                       <div class="col-md-6 col-sm-6">
                         <div class="desc">
                           <span class="day-tour">Day 1</span>
-                          <h2>Athens, Greece</h2>
-                          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                          <h2>{{ $sejour->destination->ville }} , {{ $sejour->destination->pays }}</h2>
+                          <p>{{ $sejour->description }}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div class="col-md-12 animate-box">
                   <div class="room-wrap">
                     <div class="row">

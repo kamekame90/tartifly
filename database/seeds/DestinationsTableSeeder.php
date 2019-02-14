@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SejourTableSeeder extends Seeder
+class DestinationsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class SejourTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Sejour::class,20)->create();
+        //
     }
 }

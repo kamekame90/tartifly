@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sejour extends Model
 {
-    //
+  public function destination(){
+    return $this->hasOne('App\Destination');
+  }
+  public function photos(){
+    return $this->hasMany('App\Photo');
+  }
 }

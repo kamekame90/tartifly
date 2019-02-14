@@ -84,11 +84,11 @@
                       <div class="form-group">
                         <label for="date">Where:</label>
                         <div class="form-field">
-                          <input type="text" id="location" class="form-control" placeholder="Search Location">
+                          <input type="text" name="libelle" id="location" class="form-control" placeholder="Search Location">
                         </div>
                       </div>
                      </div>
-                    
+
                     <div class="col-md-2">
                       <input type="submit" name="submit" id="submit" value="Find Flights" class="btn btn-primary btn-block">
                     </div>
@@ -748,11 +748,11 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-2">
-            <div id="colorlib-logo"><a href="index.html">Tour</a></div>
+            <div id="colorlib-logo"><a href="/">Tartifly</a></div>
           </div>
           <div class="col-xs-10 text-right menu-1">
             <ul>
-              <li class="active"><a href="index">Home</a></li>
+              <li class="active"><a href="/">Home</a></li>
               <li class="has-dropdown">
                 <a href="voyages">Voyages</a>
                 <ul class="dropdown">

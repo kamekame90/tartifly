@@ -32,7 +32,7 @@
             <?php foreach ($sejours as $key => $value): ?>
               <div class="col-md-6 col-sm-6 animate-box">
                 <div class="tour">
-                  <a href="tour-place.html" class="tour-img" style="background-image: url(images/tour-1.jpg);">
+                  <a href="/voyages/{{ $value['id'] }}" class="tour-img" style="background-image: url(images/tour-1.jpg);">
                     <p class="price"><span> {{ $value["cout"] }} Euros </span> <small>/ {{ $value["dure"] }} Days</small></p>
                   </a>
                   <span class="desc">
@@ -216,7 +216,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-2">
-            <div id="colorlib-logo"><a href="/">Tour</a></div>
+            <div id="colorlib-logo"><a href="/">Tartifly</a></div>
           </div>
           <div class="col-xs-10 text-right menu-1">
             <ul>
